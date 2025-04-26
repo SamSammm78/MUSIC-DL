@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MUSIC DL - Results</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+<body>
+<div class="p-3">
+  <h1 class="text-center">Results</h1>
+  <p class="text-center">Search : "<%= searchQuery %>"</p>
+</div>
+
+  <div class="container text-center">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <% tracks.forEach(track => { %>
+        <div class="col">
+          <div class="card h-100">
+            <img src="<%= track.album.images[0]?.url %>" alt="Album cover" >
+            <div class="card-body">
+              <h5 class="card-title"><%= track.name %></h5>
+              <p class="card-text"><%= track.artists[0].name %></p>
+            </div>
+            <button class="btn btn-primary" id="toastBtn" onclick="window.location.href='/download?name=<%= track.name %>%20<%= track.artists[0].name %>'">
+                <i class="bi bi-download"></i> Download
+            </button>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+  
+  <div class="text-center mt-4 mb-5">
+    <a href="/" class="btn btn-outline-secondary">
+      <i class="bi bi-arrow-left"></i> Back to Search
+    </a>
+  </div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</html>

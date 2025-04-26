@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>MUSIC DL</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container d-flex justify-content-center align-items-center min-vh-100">
+    <div class="card p-5 shadow" style="max-width: 500px; width: 100%;">
+      <h1 class="text-center mb-4">MUSIC DL</h1>
+      <form action="/search" method="POST">
+        <div class="mb-3">
+          <input 
+            type="text" 
+            class="form-control" 
+            name="query" 
+            placeholder="Type the name of a song..." 
+            required
+          >
+        </div>
+        <div class="d-grid">
+          <button type="submit" class="btn btn-primary btn-lg">Search</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</html>
